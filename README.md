@@ -10,7 +10,7 @@ Rendre le script éxecutable :
 
 chmod +rwx gt.sh
 
-2xécuter le script :
+Exécuter le script :
 
 ./gt.sh
 
