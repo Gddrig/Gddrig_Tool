@@ -7,10 +7,10 @@ Téléchargement :
 wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/gt.sh
 ```
 Rendre le script éxecutable :
-
+```sh
 chmod +rwx gt.sh
-
+```
 Exécuter le script :
-
+```sh
 ./gt.sh
-
+```
