@@ -2,6 +2,7 @@
 
 #version
 dversion="v0.1"
+vkernel=""
 
 #color codes
 RED='\033[1;31m'
@@ -88,17 +89,27 @@ sudo apt-get update -y > /dev/null 2>&1
 sudo apt-get install -y figlet > /dev/null 2>&1
 fi
 
+if cat /proc/version | grep 110 > /dev/null 2>&1
+
+then
+vkernel="${WORNING}${GREEN}Votre version de Kernel est à jours${NC}"
+else
+vkernel="${WORNING}${RED}Votre version de Kernel n'est pas à jours${NC}"
+
+fi
+
 clear
 echo -e "${BLUE}"
-figlet -f slant "Gddrig Tool"
+figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
 echo -e "${GREEN}Version: $dversion${NC}"
 echo -e "${GREEN}Dernière version OS: HiveOS 5.10.0-hiveos #110${NC}"
+echo -e "$vkernel"
 echo -e "${YELLOW}================================================================${NC}"
 echo -e "${CYAN}1  - Mise à jours${NC}"
 echo -e "${CYAN}2  - Voir le mineur${NC}"
 echo -e "${CYAN}3  - Voir les OC Nvidia${NC}"
-echo -e "${CYAN}4  - Version driver Nvidia${NC}"
+echo -e "${CYAN}4  - Version du driver Nvidia${NC}"
 echo -e "${CYAN}5  - Mise à jours Driver Nvidia${NC}"
 echo -e "${CYAN}6  - Forcer la mémoire à 5001 (utile pour certains algos)${NC}"
 echo -e "${CYAN}7  - Remettre la mémoire par défaut${NC}"
