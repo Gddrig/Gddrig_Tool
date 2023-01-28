@@ -2,6 +2,8 @@
 
 #version
 dversion="v0.3"
+kernel="110"
+driver="525.85"
 vkernel=""
 vdriver=""
 
@@ -23,42 +25,45 @@ function run_selfupgrade() {
         ./gt.sh
 }
 
+
 function run_mw() {
 
         echo -e "${ARROW} ${CYAN}Touche échap pour quitter${NC}"
-		sleep 3
-		motd watch
+	sleep 3
+	motd watch
         ./gt.sh
 }
+
 
 function run_rminer() {
 
         echo -e "${ARROW} ${CYAN}Redémarrage du mineur${NC}"
-		miner restart
-		echo -e "${ARROW} ${CYAN}Redémarrage éffectué${NC}"
-		sleep 5
+	miner restart
+	echo -e "${ARROW} ${CYAN}Redémarrage éffectué${NC}"
+	sleep 5
         ./gt.sh
 }
+
 
 function run_oc() {
 
         echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --clocks
         echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
-		sleep 5
-		./gt.sh
-        
+	sleep 5
+	./gt.sh      
 }
+
 
 function run_nv() {
 
         echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --driver
         echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
-		sleep 5
-		./gt.sh
-        
+	sleep 5
+	./gt.sh
 }
+
 
 function run_nu() {
 
@@ -78,6 +83,7 @@ function run_setmem5001() {
         ./gt.sh
 }
 
+
 function run_setmem0() {
 
         echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
@@ -87,11 +93,12 @@ function run_setmem0() {
         ./gt.sh
 }
 
+
 function run_kernel() {
 
         hive-replace -y -s
- 
 }
+
 
 if ! figlet -v > /dev/null 2>&1
 then
@@ -99,19 +106,22 @@ sudo apt-get update -y > /dev/null 2>&1
 sudo apt-get install -y figlet > /dev/null 2>&1
 fi
 
-if cat /proc/version | grep 110 > /dev/null 2>&1
+
+if cat /proc/version | grep $kernel > /dev/null 2>&1
 then
 vkernel="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vkernel="${WORNING}${RED}Votre version n'est pas à jours${NC}"
 fi
 
-if cat /proc/driver/nvidia/version | grep 525.85 > /dev/null 2>&1
+
+if cat /proc/driver/nvidia/version | grep $driver > /dev/null 2>&1
 then
 vdriver="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vdriver="${WORNING}${RED}Votre version n'est pas à jours${NC}"
 fi
+
 
 clear
 echo -e "${BLUE}"
@@ -147,50 +157,54 @@ read -rp "Pick an option and hit ENTER: "
     clear
     sleep 1
     run_selfupgrade
- ;;
- 2) 
+   ;;
+   
+   2) 
     clear
     sleep 1
     run_mw
- ;;
- 3)
+   ;;
+   
+   3)
     clear
     sleep 1
     run_rminer
- ;;
- 4)     
+   ;;
+   
+   4)     
     clear
     sleep 1
     run_oc
- ;;
-  5)  
-    clear
-    sleep 1
-    run_nv  
- ;;
- 
- 6)  
-    clear
-    sleep 1
-    run_nu    
- ;;
-  7)  
-    clear
-    sleep 1
-    run_setmem5001     
- ;; 
-  8)
-    clear
-    sleep 1
-    run_setmem0
- ;;
+   ;;
    
- 9)
+  5)  
+   clear
+   sleep 1
+   run_nv  
+  ;;
+ 
+  6)  
+   clear
+   sleep 1
+   run_nu    
+  ;;
+  
+  7)  
+   clear
+   sleep 1
+   run_setmem5001     
+  ;;
+  
+  8)
+   clear
+   sleep 1
+   run_setmem0
+  ;;
+   
+  9)
    clear
    sleep 1
    run_kernel
-   
- ;;
- 
- 
+  ;;
+  
     esac
