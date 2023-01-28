@@ -1,8 +1,9 @@
 #!/bin/bash
 
 #version
-dversion="v0.1"
+dversion="v0.3"
 vkernel=""
+vdriver=""
 
 #color codes
 RED='\033[1;31m'
@@ -27,6 +28,15 @@ function run_mw() {
         echo -e "${ARROW} ${CYAN}Touche échap pour quitter${NC}"
 		sleep 3
 		motd watch
+        ./gt.sh
+}
+
+function run_rminer() {
+
+        echo -e "${ARROW} ${CYAN}Redémarrage du mineur${NC}"
+		miner restart
+		echo -e "${ARROW} ${CYAN}Redémarrage éffectué${NC}"
+		sleep 5
         ./gt.sh
 }
 
@@ -92,9 +102,18 @@ fi
 if cat /proc/version | grep 110 > /dev/null 2>&1
 
 then
-vkernel="${WORNING}${GREEN}Votre version de Kernel est à jours${NC}"
+vkernel="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
-vkernel="${WORNING}${RED}Votre version de Kernel n'est pas à jours${NC}"
+vkernel="${WORNING}${RED}Votre version n'est pas à jours${NC}"
+
+fi
+
+if cat /proc/driver/nvidia/version | grep 525.85 > /dev/null 2>&1
+
+then
+vdriver="${WORNING}${GREEN}Votre version est à jours${NC}"
+else
+vdriver="${WORNING}${RED}Votre version n'est pas à jours${NC}"
 
 fi
 
@@ -103,19 +122,25 @@ echo -e "${BLUE}"
 figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
 echo -e "${GREEN}Version: $dversion${NC}"
-echo -e "${GREEN}Dernière version OS: HiveOS 5.10.0-hiveos #110${NC}"
+echo -e ""
+echo -e "${GREEN}\e[4mKernel\e[0m${NC}"
+echo -e "${GREEN}Dernière version : HiveOS 5.10.0-hiveos #110${NC}"
 echo -e "$vkernel"
+echo -e ""
+echo -e "${GREEN}\e[4mDriver Nvidia\e[0m${NC}"
+echo -e "${GREEN}Dernière version : 525.85.05${NC}"
+echo -e "$vdriver"
+echo -e ""
 echo -e "${YELLOW}================================================================${NC}"
-echo -e "${CYAN}1  - Mise à jours${NC}"
+echo -e "${CYAN}1  - Mise à jours HiveOS${NC}"
 echo -e "${CYAN}2  - Voir le mineur${NC}"
-echo -e "${CYAN}3  - Voir les OC Nvidia${NC}"
-echo -e "${CYAN}4  - Version du driver Nvidia${NC}"
-echo -e "${CYAN}5  - Mise à jours Driver Nvidia${NC}"
-echo -e "${CYAN}6  - Forcer la mémoire à 5001 (utile pour certains algos)${NC}"
-echo -e "${CYAN}7  - Remettre la mémoire par défaut${NC}"
-echo -e ""
-echo -e "${RED}9  - * Attention * Mise à Jours Kernel${NC}"
-echo -e ""
+echo -e "${CYAN}3  - Redémarrer le mineur${NC}"
+echo -e "${CYAN}4  - Voir les OC Nvidia${NC}"
+echo -e "${CYAN}5  - Version du driver Nvidia${NC}"
+echo -e "${CYAN}6  - Mise à jours Driver Nvidia${NC}"
+echo -e "${CYAN}7  - Forcer l'oc de la mémoire à 5001 (utile pour certains algos)${NC}"
+echo -e "${CYAN}8  - Remettre l'oc de la mémoire par défaut${NC}"
+echo -e "${RED}9  - Mise à Jours Kernel${NC}"
 echo -e "${CYAN}Enter - Exit${NC}"
 echo -e "${YELLOW}================================================================${NC}"
 
@@ -132,37 +157,38 @@ read -rp "Pick an option and hit ENTER: "
     sleep 1
     run_mw
  ;;
- 3)     
+ 3)
+    clear
+    sleep 1
+    run_rminer
+ ;;
+ 4)     
     clear
     sleep 1
     run_oc
  ;;
-  4)  
+  5)  
     clear
     sleep 1
     run_nv  
  ;;
  
- 5)  
+ 6)  
     clear
     sleep 1
     run_nu    
  ;;
-  6)  
+  7)  
     clear
     sleep 1
     run_setmem5001     
  ;; 
-  7)
+  8)
     clear
     sleep 1
     run_setmem0
  ;;
-   8)
-    clear
-    sleep 1
-    
- ;;
+   
  9)
    clear
    sleep 1
