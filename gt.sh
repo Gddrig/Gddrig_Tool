@@ -18,9 +18,9 @@ NC='\033[0m'
 
 function run_selfupgrade() {
 
-        echo -e "${ARROW} ${CYAN}Running Selfupgrade...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Selfupgrade...${NC}"
         selfupgrade
-        echo -e "${ARROW} ${CYAN}Sefupgrade finish...${NC}"
+        echo -e "${ARROW} ${CYAN}Sefupgrade fini...${NC}"
         sleep 5
         ./gt.sh
 }
@@ -47,9 +47,9 @@ function run_rminer() {
 
 function run_oc() {
 
-        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
         nvtool --clocks
-        echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
 	sleep 5
 	./gt.sh      
 }
@@ -57,9 +57,9 @@ function run_oc() {
 
 function run_nv() {
 
-        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
         nvtool --driver
-        echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
 	sleep 5
 	./gt.sh
 }
@@ -67,18 +67,18 @@ function run_nv() {
 
 function run_nu() {
 
-        echo -e "${ARROW} ${CYAN}Running Nvidia driver update...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Nvidia Driver Update...${NC}"
         nvidia-driver-update
-        echo -e "${ARROW} ${CYAN}Nvidia driver update finish....${NC}"
+        echo -e "${ARROW} ${CYAN}Nvidia driver update fini...${NC}"
         sleep 5
         ./gt.sh
 }
 
 function run_setmem5001() {
 
-        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
         nvtool --setmem 5001
-        echo -e "${ARROW} ${CYAN}Nvtool finish....${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
         sleep 5
         ./gt.sh
 }
@@ -86,9 +86,9 @@ function run_setmem5001() {
 
 function run_setmem0() {
 
-        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
         nvtool --setmem 0
-        echo -e "${ARROW} ${CYAN}Nvtool finish....${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
         sleep 5
         ./gt.sh
 }
