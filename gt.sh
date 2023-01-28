@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #version
-dversion="v0.3"
+dversion="0.3"
 kernel="110"
 driver="525.85"
 vkernel=""
