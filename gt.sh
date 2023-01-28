@@ -100,21 +100,17 @@ sudo apt-get install -y figlet > /dev/null 2>&1
 fi
 
 if cat /proc/version | grep 110 > /dev/null 2>&1
-
 then
 vkernel="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vkernel="${WORNING}${RED}Votre version n'est pas à jours${NC}"
-
 fi
 
 if cat /proc/driver/nvidia/version | grep 525.85 > /dev/null 2>&1
-
 then
 vdriver="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vdriver="${WORNING}${RED}Votre version n'est pas à jours${NC}"
-
 fi
 
 clear
