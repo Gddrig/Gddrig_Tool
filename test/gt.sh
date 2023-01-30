@@ -2,8 +2,7 @@
 
 #version
 dversion="0.2"
-update1=""
-update2="0.4"
+versiontxt=""
 updatetrue=""
 kernel="110"
 driver="525.60"
@@ -95,25 +94,21 @@ function run_setmem0() {
 function run_kernel() {
 
         hive-replace -y -s
- 
 }
 
-#update1=$(cat gt.sh |grep -wn -m1 dversion)
-#update2=$(echo "$update1" | grep -o "[0-9]\.[0-9]")
-echo -e "$update2"
-updatetrue=$(echo "$update2>$dversion" |bc )
+wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/ae253181af0053ab382394e38983c91f91fcf416/test/version.txt
+versiontxt=$(cat version.txt)
+echo -e "$versiontxt"
+updatetrue=$(echo "$versiontxt>$dversion" |bc )
 echo -e "$updatetrue"
 
 if  [ $updatetrue == 1 ]
 then 
 echo -e "${ARROW} ${CYAN}mise a jours de Gddrig Tool${NC}"
-rm gt.sh
-
 sleep 3
 else
-echo -e "${ARROW} ${CYAN}pas mise a jours ${NC}"
+echo -e "${ARROW} ${CYAN}Pas mise a jours ${NC}"
 sleep 3
-#./gt.sh
 fi
 
 if ! figlet -v > /dev/null 2>&1
@@ -123,21 +118,17 @@ sudo apt-get install -y figlet > /dev/null 2>&1
 fi
 
 if cat /proc/version | grep $kernel > /dev/null 2>&1
-
 then
 vkernel="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vkernel="${WORNING}${RED}Votre version n'est pas à jours${NC}"
-
 fi
 
 if cat /proc/driver/nvidia/version | grep $driver > /dev/null 2>&1
-
 then
 vdriver="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vdriver="${WORNING}${RED}Votre version n'est pas à jours${NC}"
-
 fi
 
 clear
