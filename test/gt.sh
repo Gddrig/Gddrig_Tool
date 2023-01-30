@@ -96,11 +96,15 @@ function run_kernel() {
         hive-replace -y -s
 }
 
+clear
+echo -e "${BLUE}"
+figlet -f big "Gddrig Tool"
+echo -e "${YELLOW}================================================================${NC}"
 wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/ae253181af0053ab382394e38983c91f91fcf416/test/version.txt
 versiontxt=$(cat version.txt)
-echo -e "$versiontxt"
+echo -e "${GREEN}$versiontxt${NC}"
 updatetrue=$(echo "$versiontxt>$dversion" |bc )
-echo -e "$updatetrue"
+echo -e "${GREEN}$updatetrue${NC}"
 
 if  [ $updatetrue == 1 ]
 then 
