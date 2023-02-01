@@ -171,7 +171,7 @@ echo -e "${RED}9  - Mise à Jours Kernel${NC}"
 echo -e "${CYAN}Enter - Exit${NC}"
 echo -e "${YELLOW}================================================================${NC}"
 
-read -rp "Pick an option and hit ENTER: "
+read -rp "Choisir une option et cliquer ENTER: "
 
   case "$REPLY" in
    1)  
