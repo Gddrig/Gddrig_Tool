@@ -101,7 +101,7 @@ echo -e "${BLUE}"
 figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
 wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/ae253181af0053ab382394e38983c91f91fcf416/test/versiongt.txt
-versiontxt=$(cat version.txt)
+versiontxt=$(cat versiongt.txt)
 echo -e "${GREEN}$versiontxt${NC}"
 updatetrue=$(echo "$versiontxt>$dversion" |bc )
 echo -e "${GREEN}$updatetrue${NC}"
