@@ -5,7 +5,7 @@ dversion="0.4"
 versiontxt=""
 updatetrue=""
 kernel="110"
-driver="525.60"
+driver="525.85"
 vkernel=""
 vdriver=""
 
