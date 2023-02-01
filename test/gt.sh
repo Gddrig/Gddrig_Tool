@@ -108,8 +108,14 @@ echo -e "${GREEN}$updatetrue${NC}"
 
 if  [ $updatetrue == 1 ]
 then 
-echo -e "${ARROW} ${CYAN}mise a jours de Gddrig Tool${NC}"
+echo -e "${ARROW} ${CYAN}Votre version de Gddrig Tool est $dversion${NC}"
+sleep 1
+echo -e "${ARROW} ${CYAN}L dernière version de Gddrig Tool est $versiontxt{NC}"
+sleep 1
+echo -e "${ARROW} ${CYAN}Mise a jours de Gddrig Tool${NC}"
 rm versiongt.txt
+sleep 1
+echo -e "${ARROW} ${CYAN}Mise a jours de Gddrig Tool${NC}"
 sleep 3
 else
 echo -e "${ARROW} ${CYAN}Pas mise a jours ${NC}"
