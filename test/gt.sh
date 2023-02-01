@@ -119,6 +119,7 @@ wget -q https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/test/gt.sh
 chmod +rwx gt.sh
 sleep 1
 echo -e "${GREEN}Mise a jours de Gddrig Tool effectuée !${NC}"
+sleep 3
 ./$(basename $0) && exit
 else
 rm versiongt.txt
