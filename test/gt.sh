@@ -100,7 +100,7 @@ clear
 echo -e "${BLUE}"
 figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
-wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/ae253181af0053ab382394e38983c91f91fcf416/test/version.txt
+wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/ae253181af0053ab382394e38983c91f91fcf416/test/versiongt.txt
 versiontxt=$(cat version.txt)
 echo -e "${GREEN}$versiontxt${NC}"
 updatetrue=$(echo "$versiontxt>$dversion" |bc )
@@ -109,9 +109,11 @@ echo -e "${GREEN}$updatetrue${NC}"
 if  [ $updatetrue == 1 ]
 then 
 echo -e "${ARROW} ${CYAN}mise a jours de Gddrig Tool${NC}"
+rm versiongt.txt
 sleep 3
 else
 echo -e "${ARROW} ${CYAN}Pas mise a jours ${NC}"
+rm versiongt.txt
 sleep 3
 fi
 
