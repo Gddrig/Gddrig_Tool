@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #version
-dversion="0.2"
+dversion="0.4"
 versiontxt=""
 updatetrue=""
 kernel="110"
@@ -114,6 +114,8 @@ echo -e "${GREEN}La dernière version de Gddrig Tool est $versiontxt${NC}"
 sleep 1
 echo -e "${GREEN}Mise a jours de Gddrig Tool${NC}"
 rm versiongt.txt
+rm gt.sh
+wget -q https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/test/gt.sh
 sleep 1
 echo -e "${GREEN}Mise a jours de Gddrig Tool effectuée !${NC}"
 sleep 3
