@@ -102,9 +102,9 @@ figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
 wget https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/test/versiongt.txt
 versiontxt=$(cat versiongt.txt)
-echo -e "${GREEN}$versiontxt${NC}"
+#echo -e "${GREEN}$versiontxt${NC}"
 updatetrue=$(echo "$versiontxt>$dversion" |bc )
-echo -e "${GREEN}$updatetrue${NC}"
+#echo -e "${GREEN}$updatetrue${NC}"
 
 if  [ $updatetrue == 1 ]
 then 
