@@ -1,7 +1,9 @@
 #!/bin/bash
 
 #version
-dversion="0.3"
+dversion="0.5"
+versiontxt=""
+updatetrue=""
 kernel="110"
 driver="525.85"
 vkernel=""
@@ -18,94 +20,116 @@ NC='\033[0m'
 
 function run_selfupgrade() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Selfupgrade...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Selfupgrade...${NC}"
         selfupgrade
-        echo -e "${ARROW} ${CYAN}Sefupgrade fini...${NC}"
+        echo -e "${ARROW} ${CYAN}Sefupgrade finish...${NC}"
         sleep 5
         ./gt.sh
 }
 
-
 function run_mw() {
 
         echo -e "${ARROW} ${CYAN}Touche échap pour quitter${NC}"
-	sleep 3
-	motd watch
+                sleep 3
+                motd watch
         ./gt.sh
 }
-
 
 function run_rminer() {
 
         echo -e "${ARROW} ${CYAN}Redémarrage du mineur${NC}"
-	miner restart
-	echo -e "${ARROW} ${CYAN}Redémarrage éffectué${NC}"
-	sleep 5
+                miner restart
+                echo -e "${ARROW} ${CYAN}Redémarrage éffectué${NC}"
+                sleep 5
         ./gt.sh
 }
 
-
 function run_oc() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --clocks
-        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
-	sleep 5
-	./gt.sh      
-}
+        echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
+                sleep 5
+                ./gt.sh
 
+}
 
 function run_nv() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --driver
-        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
-	sleep 5
-	./gt.sh
-}
+        echo -e "${ARROW} ${CYAN}Nvtool finish...${NC}"
+                sleep 5
+                ./gt.sh
 
+}
 
 function run_nu() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Nvidia Driver Update...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Nvidia driver update...${NC}"
         nvidia-driver-update
-        echo -e "${ARROW} ${CYAN}Nvidia driver update fini...${NC}"
+        echo -e "${ARROW} ${CYAN}Nvidia driver update finish....${NC}"
         sleep 5
         ./gt.sh
 }
 
 function run_setmem5001() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --setmem 5001
-        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool finish....${NC}"
         sleep 5
         ./gt.sh
 }
-
 
 function run_setmem0() {
 
-        echo -e "${ARROW} ${CYAN}Démarrage de Nvtool...${NC}"
+        echo -e "${ARROW} ${CYAN}Running Nvtool...${NC}"
         nvtool --setmem 0
-        echo -e "${ARROW} ${CYAN}Nvtool fini...${NC}"
+        echo -e "${ARROW} ${CYAN}Nvtool finish....${NC}"
         sleep 5
         ./gt.sh
 }
-
 
 function run_kernel() {
 
         hive-replace -y -s
 }
 
+clear
+echo -e "${BLUE}"
+figlet -f big "Gddrig Tool"
+echo -e "${YELLOW}================================================================${NC}"
+wget -q https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/test/versiongt.txt
+versiontxt=$(cat versiongt.txt)
+#echo -e "${GREEN}$versiontxt${NC}"
+updatetrue=$(echo "$versiontxt>$dversion" |bc )
+#echo -e "${GREEN}$updatetrue${NC}"
+
+if  [ $updatetrue == 1 ]
+then 
+echo -e "${GREEN}Votre version de Gddrig Tool est $dversion${NC}"
+sleep 1
+echo -e "${GREEN}La dernière version de Gddrig Tool est $versiontxt${NC}"
+sleep 1
+echo -e "${GREEN}Mise a jours de Gddrig Tool${NC}"
+rm versiongt.txt
+rm gt.sh
+wget -q https://raw.githubusercontent.com/Gddrig/Gddrig_Tool/main/test/gt.sh
+chmod +rwx gt.sh
+sleep 1
+echo -e "${GREEN}Mise a jours de Gddrig Tool effectuée !${NC}"
+sleep 3
+./$(basename $0) && exit
+else
+rm versiongt.txt
+fi
 
 if ! figlet -v > /dev/null 2>&1
 then
 sudo apt-get update -y > /dev/null 2>&1
 sudo apt-get install -y figlet > /dev/null 2>&1
 fi
-
 
 if cat /proc/version | grep $kernel > /dev/null 2>&1
 then
@@ -114,14 +138,12 @@ else
 vkernel="${WORNING}${RED}Votre version n'est pas à jours${NC}"
 fi
 
-
 if cat /proc/driver/nvidia/version | grep $driver > /dev/null 2>&1
 then
 vdriver="${WORNING}${GREEN}Votre version est à jours${NC}"
 else
 vdriver="${WORNING}${RED}Votre version n'est pas à jours${NC}"
 fi
-
 
 clear
 echo -e "${BLUE}"
@@ -150,61 +172,57 @@ echo -e "${RED}9  - Mise à Jours Kernel${NC}"
 echo -e "${CYAN}Enter - Exit${NC}"
 echo -e "${YELLOW}================================================================${NC}"
 
-read -rp "Pick an option and hit ENTER: "
+read -rp "Choisir une option et cliquer ENTER: "
 
   case "$REPLY" in
    1)  
     clear
     sleep 1
     run_selfupgrade
-   ;;
-   
-   2) 
+ ;;
+ 2) 
     clear
     sleep 1
     run_mw
-   ;;
-   
-   3)
+ ;;
+ 3)
     clear
     sleep 1
     run_rminer
-   ;;
-   
-   4)     
+ ;;
+ 4)  
     clear
     sleep 1
     run_oc
-   ;;
-   
+ ;;
   5)  
-   clear
-   sleep 1
-   run_nv  
-  ;;
+    clear
+    sleep 1
+    run_nv  
+ ;;
  
-  6)  
-   clear
-   sleep 1
-   run_nu    
-  ;;
-  
+ 6)  
+    clear
+    sleep 1
+    run_nu    
+ ;;
   7)  
-   clear
-   sleep 1
-   run_setmem5001     
-  ;;
-  
-  8)
-   clear
-   sleep 1
-   run_setmem0
-  ;;
+    clear
+    sleep 1
+    run_setmem5001     
+ ;; 
+ 8)
+    clear
+    sleep 1
+    run_setmem0
+ ;;
    
-  9)
+ 9)
    clear
    sleep 1
    run_kernel
-  ;;
-  
+   
+ ;;
+ 
+ 
     esac
