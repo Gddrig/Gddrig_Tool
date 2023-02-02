@@ -1,6 +1,6 @@
-Script tool for Hiveos
+Script tool pour Hiveos
 
-![alt text](https://github.com/Gddrig/Gddrig_Tool/blob/main/v3.JPG)
+![alt text](https://github.com/Gddrig/Gddrig_Tool/blob/main/v05.JPG)
 
 Téléchargement :
 ```sh
