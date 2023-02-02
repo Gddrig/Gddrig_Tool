@@ -1,4 +1,4 @@
-Script tool pour Hiveos
+# Script tool pour Hiveos
 
 ![alt text](https://github.com/Gddrig/Gddrig_Tool/blob/main/v05.JPG)
 
@@ -23,7 +23,7 @@ Telegram : https://t.me/aideminagehiveos
 
 ## CHANGELOG 
 
-####Version 0.5 :
+#### Version 0.5 :
 
 - Mise à jours automatique
 - Vous informe si vos version de Driver et Kernel sont à jours
