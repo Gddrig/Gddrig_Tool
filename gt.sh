@@ -97,6 +97,13 @@ function run_kernel() {
 }
 
 clear
+
+if ! figlet -v > /dev/null 2>&1
+then
+sudo apt-get update -y > /dev/null 2>&1
+sudo apt-get install -y figlet > /dev/null 2>&1
+fi
+
 echo -e "${BLUE}"
 figlet -f big "Gddrig Tool"
 echo -e "${YELLOW}================================================================${NC}"
@@ -123,12 +130,6 @@ sleep 3
 ./$(basename $0) && exit
 else
 rm versiongt.txt
-fi
-
-if ! figlet -v > /dev/null 2>&1
-then
-sudo apt-get update -y > /dev/null 2>&1
-sudo apt-get install -y figlet > /dev/null 2>&1
 fi
 
 if cat /proc/version | grep $kernel > /dev/null 2>&1
