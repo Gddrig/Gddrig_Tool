@@ -1,5 +1,12 @@
 # Bittensor ( Version simple ET uniquement CPU ) 
 
+- [Installation](#installation)
+- [Prérequis](#prérequis)
+- [Création Wallets](#création-wallets)
+- [Test de l'enregistrement sur le réseau Nobunaga](#test-de-lenregistrement-sur-le-réseau-nobunaga)
+- [Enregistrement sur le réseau Principal ( Nagamoto )](#enregistrement-sur-le-réseau-principal--nagamoto-)
+- [Minage](#minage)
+
 ## Installation 
 
 Testé sur ubuntu 20.04 
