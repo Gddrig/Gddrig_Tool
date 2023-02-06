@@ -32,12 +32,12 @@ btcli new_hotkey
 ```
 **Pensez a bien sauvegarder vos mnémoniques !**
 
-## Test de l'enregistrement sur le réseau nobunaga
+## Test de l'enregistrement sur le réseau Nobunaga
 ```sh
 btcli register --subtensor.network nobunaga
 ```
 
-## Enregistrement sur le réseau
+## Enregistrement sur le réseau Principal ( Nagamoto )
 ```sh
 btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
 ```
