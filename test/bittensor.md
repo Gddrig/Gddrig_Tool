@@ -30,6 +30,12 @@ pip3 install bittensor
 btcli new_coldkey
 btcli new_hotkey
 ```
+**Pensez a bien sauvegarder vos mnémoniques !**
+
+## Test de l'enregistrement sur le réseau nobunaga
+```sh
+btcli register --subtensor.network nobunaga
+```
 
 ## Enregistrement sur le réseau
 ```sh
