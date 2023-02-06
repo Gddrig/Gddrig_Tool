@@ -16,7 +16,7 @@ Testé sur ubuntu 20.04
 
 Super utilisateur
 ```sh
-Sudo su
+sudo su
 ```
 
 Mise à jours Ubuntu 
