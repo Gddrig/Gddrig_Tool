@@ -6,6 +6,7 @@
 - [Test de l'enregistrement sur le réseau Nobunaga](#test-de-lenregistrement-sur-le-réseau-nobunaga)
 - [Enregistrement sur le réseau Principal ( Nagamoto )](#enregistrement-sur-le-réseau-principal--nagamoto-)
 - [Minage](#minage)
+- [Erreur PYTHONIOENCODING=utf-8](#erreur-pythonioencodingutf-8)
 - [Anydesk sur Ubuntu](#anydesk-sur-ubuntu)
 
 ## Installation 
