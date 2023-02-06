@@ -55,6 +55,11 @@ btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://arc
 btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
 ```
 
+# Erreur PYTHONIOENCODING=utf-8
+```sh
+export PYTHONIOENCODING=utf-8
+```
+
 # Autre
 
 ## Anydesk sur Ubuntu
