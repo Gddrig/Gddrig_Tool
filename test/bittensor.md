@@ -25,3 +25,18 @@ Installation de Bittensor
 pip3 install bittensor
 ```
 
+Création Wallets
+```sh
+btcli new_coldkey
+btcli new_hotkey
+```
+
+Enregistrement sur le réseau
+```sh
+btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
+```
+
+Minage
+```sh
+btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
+```
