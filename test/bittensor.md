@@ -6,6 +6,7 @@
 - [Test de l'enregistrement sur le réseau Nobunaga](#test-de-lenregistrement-sur-le-réseau-nobunaga)
 - [Enregistrement sur le réseau Principal ( Nagamoto )](#enregistrement-sur-le-réseau-principal--nagamoto-)
 - [Minage](#minage)
+- [Anydesk sur Ubuntu](#anydesk-sur-ubuntu)
 
 ## Installation 
 
@@ -52,4 +53,14 @@ btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://arc
 ## Minage
 ```sh
 btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
+```
+
+# Autre
+
+## Anydesk sur Ubuntu
+```sh
+wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | apt-key add -
+echo "deb http://deb.anydesk.com/ all main" > /etc/apt/sources.list.d/anydesk-stable.list
+apt update
+apt install anydesk
 ```
