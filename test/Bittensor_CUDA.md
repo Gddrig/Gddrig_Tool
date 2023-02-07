@@ -26,7 +26,7 @@ wget https://developer.download.nvidia.com/compute/cuda/11.3.1/local_installers/
 sudo sh cuda_11.3.1_465.19.01_linux.run
 ```
 
-Ajouter Cuda Toolkit a l'envirenement de l'OS
+Ajouter Cuda Toolkit a l'environement de l'OS
 ```sh
 export PATH=/usr/local/cuda-11.3/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-11.3/lib64\
