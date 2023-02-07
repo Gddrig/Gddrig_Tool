@@ -24,7 +24,15 @@ Mise à jours Ubuntu
 ```sh
 apt update
 apt upgrade
+```
+
+Etre à la racine 
+```sh
 cd
+```
+
+Installer les dépendences 
+```sh
 apt install python3-testresources
 apt install python3-pip
 ```
