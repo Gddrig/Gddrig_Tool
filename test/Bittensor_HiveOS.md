@@ -53,8 +53,7 @@ pip3 install -U pip
 pip3 install bittensor --ignore-installed httplib2
 ```
 
-**En cas d'erreur espace disque, taper :
-Disk-expand**
+**En cas d'erreur espace disque, taper : disk-expand**
 
 ## Création Wallets
 ```sh
