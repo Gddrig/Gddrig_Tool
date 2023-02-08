@@ -1,5 +1,9 @@
 # Bittensor HiveOS
 
+## Prérequis
+
+HiveOs #110 et driver Nvidia à jours
+
 ## Préparation
 
 Super utilisateur
