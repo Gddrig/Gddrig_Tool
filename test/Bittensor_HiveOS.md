@@ -91,3 +91,10 @@ btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivel
 ```sh
 pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
 ```
+
+### Optimisation 
+
+Rajouter les arguments :
+```sh
+--cuda.TPB 512 --cuda.update_interval 70_000
+```
