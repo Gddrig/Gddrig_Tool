@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-HiveOs #110 et driver Nvidia à jours
+HiveOS #110 et driver Nvidia à jours
 
 ## Préparation
 
