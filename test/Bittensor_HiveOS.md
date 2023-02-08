@@ -82,3 +82,8 @@ btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://arc
 ```sh
 btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
 ```
+
+## Installation de Cubit ( Support CUDA )
+```sh
+pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
+```
