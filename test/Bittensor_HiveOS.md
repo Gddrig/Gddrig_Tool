@@ -98,7 +98,7 @@ Rajouter les arguments :
 ```sh
 --cuda.TPB 512 --cuda.update_interval 70_000
 ```
-**btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000**
+**Exemple : btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000**
 
 ### Mise à jours torch
 ```sh
