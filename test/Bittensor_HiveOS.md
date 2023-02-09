@@ -18,8 +18,7 @@ cd
 
 Mise à jours Ubuntu ( copier ligne par ligne )
 ```sh
-apt update
-apt upgrade
+apt-get update && sudo apt-get upgrade -y
 ```
 
 ### Installation et configuration de Python 3.8
