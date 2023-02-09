@@ -16,7 +16,7 @@ Etre à la racine
 cd
 ```
 
-Mise à jours Ubuntu 
+Mise à jours Ubuntu ( copier ligne par ligne )
 ```sh
 apt update
 apt upgrade
@@ -26,10 +26,10 @@ apt upgrade
 
 Installation
 ```sh
-apt install python3.8 python3.8-dev
+apt install python3.8 python3.8-dev 
 ```
 
-Configuration
+Configuration ( copier ligne par ligne )
 ```sh
 update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
 update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
@@ -59,7 +59,7 @@ pip3 install bittensor --ignore-installed httplib2
 
 **En cas d'erreur espace disque, taper : disk-expand**
 
-## Création Wallets
+## Création Wallets ( copier ligne par ligne )
 ```sh
 btcli new_coldkey
 btcli new_hotkey
