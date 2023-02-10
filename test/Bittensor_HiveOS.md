@@ -48,12 +48,12 @@ apt install python3-testresources python3-pip cargo
 
 Upgrade
 ```sh
-pip3 install -U pip
+python3 -m pip install install -U pip
 ```
 
 ## Installation de Bittensor
 ```sh
-pip3 install bittensor --ignore-installed httplib2
+python3 -m pip install install bittensor --ignore-installed httplib2
 ```
 
 **En cas d'erreur espace disque, taper : disk-expand**
