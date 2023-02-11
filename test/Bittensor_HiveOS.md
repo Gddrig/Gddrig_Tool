@@ -36,7 +36,7 @@ python3 -m pip install -U pip
 
 ## Installation de Bittensor
 ```sh
-python3 -m pip install install bittensor --ignore-installed httplib2
+python3 -m pip install bittensor --ignore-installed httplib2
 ```
 
 **En cas d'erreur espace disque, taper : disk-expand**
