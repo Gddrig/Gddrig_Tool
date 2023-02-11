@@ -31,7 +31,7 @@ update-alternatives --config python3
 
 Upgrade
 ```sh
-python3 -m pip install install -U pip
+python3 -m pip install -U pip
 ```
 
 ## Installation de Bittensor
