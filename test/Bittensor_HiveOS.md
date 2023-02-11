@@ -6,26 +6,16 @@ HiveOS #110 et driver Nvidia à jours
 
 ## Préparation
 
-Super utilisateur
-```sh
-sudo su
-```
-
-Etre à la racine 
-```sh
-cd
-```
-
 Mise à jours Ubuntu ( copier ligne par ligne )
 ```sh
-apt-get update && sudo apt-get upgrade -y
+sudo apt-get update && sudo apt-get upgrade -y
 ```
 
 ### Installation et configuration de Python 3.8
 
 Installation
 ```sh
-apt install python3.8 python3.8-dev 
+sudo apt-get install python3.8 python3.8-dev python3-testresources python3-pip cargo -y
 ```
 
 Configuration ( copier ligne par ligne )
@@ -37,13 +27,6 @@ update-alternatives --config python
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
 update-alternatives --config python3
-```
-
-### Dépendences et Upgrade
-
-Dépendences
-```sh
-apt install python3-testresources python3-pip cargo
 ```
 
 Upgrade
@@ -102,4 +85,9 @@ Rajouter les arguments :
 ### Mise à jours torch
 ```sh
 pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+```
+
+### Mise à jours torch 2.0
+```sh
+pip3 install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
 ```
