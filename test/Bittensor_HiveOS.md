@@ -101,10 +101,13 @@ python3 -m pip install bittensor
 ```
 
 ## Création Wallets ( copier ligne par ligne )
+
+Donnez un nom de wallet et un mot de passe
 ```sh
 btcli new_coldkey
 ```
 *ATTENTION !! Ici il va d'abord vous demander votre adresse de coldwallet PUIS APRES de votre hotwallet*
+```sh
 btcli new_hotkey
 ```
 **Pensez a bien sauvegarder vos mnémoniques !**
