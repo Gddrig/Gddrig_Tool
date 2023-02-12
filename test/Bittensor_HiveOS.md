@@ -156,7 +156,7 @@ btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivel
 
 Screen sert a creer une console virtuel qui ne se fermera pas si on ferme la fenetre de la console à distance.
 
-Exemple simple, lorsque vous miner avec HiveOS, votre minage est en cours dans un screen, si vous taper miner vous vous retrouver dans le screen de votre minage !
+Exemple simple, lorsque vous miner avec HiveOS, votre minage est en cours dans un screen, si vous taper miner vous vous retrouvez dans le screen de votre minage !
 
 ## Voir la liste des screens
 ```sh
