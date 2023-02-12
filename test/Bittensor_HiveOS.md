@@ -103,6 +103,8 @@ python3 -m pip install bittensor
 ## Création Wallets ( copier ligne par ligne )
 ```sh
 btcli new_coldkey
+```
+*ATTENTION !! Ici il va d'abord vous demander votre adresse de coldwallet PUIS APRES de votre hotwallet*
 btcli new_hotkey
 ```
 **Pensez a bien sauvegarder vos mnémoniques !**
@@ -112,41 +114,39 @@ Exemple : --wallet.name GddrigC --wallet.hotkey GddrigH**
 
 
 ## Test de l'enregistrement sur le réseau Nobunaga
+
+On va enregistrer notre wallet sur le réseau de test pour voir si tout fonctionne bien. Cela doit prendre quelque minutes.
+
+S'il vous demande d'utiliser le CUDA, répondez non.
 ```sh
 btcli register --subtensor.network nobunaga
+
 ```
-
-
-## Enregistrement sur le réseau Principal ( Nagamoto )
-```sh
-btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
-```
-
-
-## Minage
-```sh
-btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943
-```
-
 ## Installation de Cubit ( Support CUDA )
 ```sh
 python3 -m pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
 ```
 
-### Optimisation 
-
-Rajouter les arguments :
-```sh
---cuda.TPB 512 --cuda.update_interval 70_000
-```
-**Exemple : btcli register --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000**
-
-### Mise à jours torch
-```sh
-python3 -m pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
-```
-
-### Mise à jours torch 2.0
+## Mise à jours torch 2.0 ( necessaire pour les RTX3000 et plus )
 ```sh
 python3 -m pip install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
 ```
+
+## Enregistrement sur le réseau Principal ( Nagamoto )
+
+Là, nous allons enfin lancer le vraie enregistrement sur le réseau principal !
+
+```sh
+btcli register --cuda --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000
+```
+
+*Exemple de commande complète : btcli register --cuda --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000 --wallet.name GddrigC --wallet.hotkey GddrigH*
+
+## Minage
+```sh
+btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000
+```
+
+*Exemple de commande complète : btcli run --cuda --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000 --wallet.name GddrigC --wallet.hotkey GddrigH*
+
+
