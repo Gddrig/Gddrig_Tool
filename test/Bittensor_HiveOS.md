@@ -2,9 +2,46 @@
 
 ## Prérequis
 
-HiveOS #110 et driver Nvidia à jours
+### HiveOS #110 et driver Nvidia à jours
+
+**Rappel des commandes :**
+
+Mise à jours/Réinstallation du Kernel de Hiveos :
+```sh
+hive-replace -y -s
+```
+Mise à jours de Hiveos :
+```sh
+selfupgrade
+```
+Mise à jours des drivers Nvidia :
+```sh
+nvidia-driver-update
+```
 
 ## Préparation
+
+De base avec HiveOs, l'utilisateur principal est "root" ( un super administrateur ), hors Bittensor utilise comme language le Python et il est incompatible avec le "root", nous allons devoir créer un nouvel utilisateur avec les droits administrateurs, que je nommerais $pseudo dans mes commmandes et donc qui sera a remplacer par votre propre pseudo.
+
+### Création et paramétrage du nouvel utilisateur 
+
+Ajout utilisateur 
+```sh
+adduser $pseudo
+```
+*Exemple : adduser gdddrig*
+
+Donner les droit d'administrations
+```sh
+usermod -aG sudo $pseudo
+```
+*Exemple : usermod -aG sudo gddrig*
+
+sélectionner le nouvel utilisateur
+```sh
+su $pseudo
+```
+*Exemple : su gddrig*
 
 Mise à jours Ubuntu ( copier ligne par ligne )
 ```sh
