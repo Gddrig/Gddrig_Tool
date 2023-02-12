@@ -152,4 +152,28 @@ btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivel
 
 *Exemple de commande complète : btcli run --cuda --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivelb.nakamoto.opentensor.ai:9943 --cuda.TPB 512 --cuda.update_interval 70_000 --wallet.name GddrigC --wallet.hotkey GddrigH*
 
+# Linux Screen
+
+Screen sert a creer une console virtuel qui ne se fermera pas si on ferme la fenetre de la console a distance.
+
+Exemple simple, lorsque vous miner avec HiveOS, votre minage est en cours dans un screen, si vous taper miner vous vous retrouver dans le screen de votre minage !
+
+## Voir la liste des screens
+```sh
+screen -ls
+
+## Creer un nouveau screen pour Bittensor
+```sh
+screen -S NomDuScreen
+```
+*Exemple : screen -S tensor
+
+## Arreter Bittensor
+
+Touche Ctrl+c  puis Ctrl+d, vous devriez voir [screen is terminating]
+
+
+
+
+
 
