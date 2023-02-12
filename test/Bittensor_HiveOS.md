@@ -173,7 +173,40 @@ screen -S NomDuScreen
 Touche Ctrl+c  puis Ctrl+d, vous devriez voir [screen is terminating]
 
 
+# Selfupgrade failed 
 
+Le problème est que Bittensor veux Python 3.8 et selfupgrade Python 3.6 !
+
+Donc il falloir redéclarer Python 3.6 par défaut et remettre en 3.8 après ! :/
+
+```sh
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 1
+```
+```sh
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 2
+```
+```sh
+sudo update-alternatives --config python3
+```
+*Prenez le choix 0*
+
+Effectuer votre 
+```sh
+selfupgrade
+```
+
+Puis on revient à la configuration pour bittensor 
+
+```sh
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+```
+```sh
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
+```
+```sh
+sudo update-alternatives --config python3
+```
+*Prenez le choix 0*
 
 
 
