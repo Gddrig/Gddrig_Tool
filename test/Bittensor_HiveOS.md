@@ -43,12 +43,20 @@ su $pseudo
 ```
 *Exemple : su gddrig*
 
-Mise à jours Ubuntu ( copier ligne par ligne )
+Vous devriez alors avoir quelque chose comme *gddrig@MonRig:/home/user$*, hors pour faire propre nous voulons travailler à la racine, donc :
+```sh
+cd
+```
+Et maintenant vous devriez avoir : *gddrig@MonRig:~$*
+
+### Mise à jours Ubuntu
 ```sh
 sudo apt-get update && sudo apt-get upgrade -y
 ```
 
 ### Installation et configuration de Python 3.8
+
+De base avec HiveOs, Python est préinstallé en version 2.7 pour Python et 3.6 pour Python3, celui que l'on veux est Python3 mais en version 3.8, donc nous allons l'installer et dire a HiveOS que l'on veux utiliser la version 3.8 à la place de la version 3.6. 
 
 Installation
 ```sh
@@ -57,23 +65,31 @@ sudo apt-get install python3.8 python3.8-dev python3-testresources python3-pip c
 
 Configuration ( copier ligne par ligne )
 ```sh
-update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
-update-alternatives --install /usr/bin/python python /usr/bin/python3.8 2
-update-alternatives --config python
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
+```
+```sh
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
+```
+```sh
+sudo update-alternatives --config python3
+```
+*Prenez le choix 0*
 
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
-update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.8 2
-update-alternatives --config python3
+## Installation de Bittensor
+
+Pour que l'installation de Bittensor ce déroule sans problème, nous devons d'abord d'éclarer le chemin ($PATH) où va etre installé Bittensor, puis mettre a jour pip ( le gestionnaire de paquets Python ).
+
+Déclaration du $PATH
+```sh
+export PATH="/home/gddrig/.local/bin:$PATH"
 ```
 
-Upgrade
+Upgrade pip
 ```sh
 python3 -m pip install -U pip
 ```
-
-## Installation de Bittensor
 ```sh
-python3 -m pip install bittensor --ignore-installed httplib2
+python3 -m pip install bittensor
 ```
 
 **En cas d'erreur espace disque, taper : disk-expand**
