@@ -85,8 +85,10 @@ Pour que l'installation de Bittensor ce déroule sans problème, nous devons d'a
 
 Déclaration du $PATH
 ```sh
-export PATH="/home/gddrig/.local/bin:$PATH"
+export PATH="/home/$pseudo/.local/bin:$PATH"
 ```
+
+*ATTENTION !!! Pensez a remplacer $pseudo ! Exemple :  export PATH="/home/gddrig/.local/bin:$PATH"*
 
 Upgrade pip
 ```sh
