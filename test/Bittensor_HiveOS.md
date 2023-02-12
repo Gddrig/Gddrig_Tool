@@ -161,12 +161,18 @@ Exemple simple, lorsque vous miner avec HiveOS, votre minage est en cours dans u
 ## Voir la liste des screens
 ```sh
 screen -ls
-
+```
 ## Creer un nouveau screen pour Bittensor
 ```sh
 screen -S NomDuScreen
 ```
-*Exemple : screen -S tensor
+*Exemple : screen -S tensor*
+
+## Récupérer un screen après fermeture de la fenetre du terminal
+```sh
+screen -x NomDuScreen
+```
+*Exemple : screen -x tensor*
 
 ## Arreter Bittensor
 
