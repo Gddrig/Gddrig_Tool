@@ -2,7 +2,7 @@
 
 ## Prérequis
 
-### HiveOS #110 et driver Nvidia à jours
+### HiveOS #110, drivers Nvidia à jours et espace disque suffisant
 
 **Rappel des commandes :**
 
@@ -18,6 +18,10 @@ Mise à jours des drivers Nvidia :
 ```sh
 nvidia-driver-update
 ```
+Etendre au maximum l'espace disque aloué par HiveOS :
+```sh
+disk-expand
+```
 
 ## Préparation
 
@@ -29,7 +33,7 @@ Ajout utilisateur
 ```sh
 adduser $pseudo
 ```
-*Exemple : adduser gdddrig*
+*Exemple : adduser gddrig*
 
 Donner les droit d'administrations
 ```sh
@@ -63,7 +67,7 @@ Installation
 sudo apt-get install python3.8 python3.8-dev python3-testresources python3-pip cargo -y
 ```
 
-Configuration ( copier ligne par ligne )
+Configuration
 ```sh
 sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.6 1
 ```
@@ -77,7 +81,7 @@ sudo update-alternatives --config python3
 
 ## Installation de Bittensor
 
-Pour que l'installation de Bittensor ce déroule sans problème, nous devons d'abord d'éclarer le chemin ($PATH) où va etre installé Bittensor, puis mettre a jour pip ( le gestionnaire de paquets Python ).
+Pour que l'installation de Bittensor ce déroule sans problème, nous devons d'abord d'éclarer le chemin ($PATH) où va etre installé Bittensor, puis mettre à jour pip ( le gestionnaire de paquets Python ).
 
 Déclaration du $PATH
 ```sh
@@ -88,11 +92,11 @@ Upgrade pip
 ```sh
 python3 -m pip install -U pip
 ```
+
+Installation de Bittensor
 ```sh
 python3 -m pip install bittensor
 ```
-
-**En cas d'erreur espace disque, taper : disk-expand**
 
 ## Création Wallets ( copier ligne par ligne )
 ```sh
@@ -124,7 +128,7 @@ btcli run --subtensor.network nagamoto --subtensor.chain_endpoint wss://archivel
 
 ## Installation de Cubit ( Support CUDA )
 ```sh
-pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
+python3 -m pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
 ```
 
 ### Optimisation 
@@ -137,10 +141,10 @@ Rajouter les arguments :
 
 ### Mise à jours torch
 ```sh
-pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
+python3 -m pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
 ### Mise à jours torch 2.0
 ```sh
-pip3 install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
+python3 -m pip install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
 ```
