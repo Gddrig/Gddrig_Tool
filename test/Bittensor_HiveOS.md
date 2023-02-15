@@ -130,9 +130,9 @@ btcli register --subtensor.network nobunaga
 python3 -m pip install https://github.com/opentensor/cubit/releases/download/v1.1.2/cubit-1.1.2-cp38-cp38-linux_x86_64.whl
 ```
 
-## Mise à jours torch 2.0 ( necessaire pour les RTX3000 et plus )
+## Mise à jours torch 1.12.1 ( necessaire pour les RTX3000 et plus )
 ```sh
-python3 -m pip install numpy --pre torch --force-reinstall --index-url https://download.pytorch.org/whl/nightly/cu117
+python3 -m pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
 ```
 
 ## Enregistrement sur le réseau Principal ( Nagamoto )
