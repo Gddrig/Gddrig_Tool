@@ -4,3 +4,11 @@ GKQUodaHi5JDNqme5rikrkNx1eeY3eJ97t
 
 
 BaGamWr6mXLvTTneN65C3erWkGzJ9kmRnU
+
+
+rpcallowip-0.0.0.0/0
+txindex=1
+server=1
+rpcuser=
+rpcpassword=
+rpcport-15167 rpcbind-
