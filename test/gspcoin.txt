@@ -20,3 +20,6 @@ rpcport-15167 rpcbind-
 t1V3MiUzNZTW1pYQPPZKPp5Jcgn2XLtpGND
 
 REtNosYGVwh8EqfaMaF8wzJQNNpNNU8RS9
+
+
+wget -r https://kawpow.digital/satox/index.php
