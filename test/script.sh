@@ -16,23 +16,23 @@ function start_script() {
 
 		#·TCC
 		echo -e "${GREEN}Minage Taichicoin ${NC}"
-        nvtool --setclocks 1200 --setmem 5000 & /hive/miners/wildrig-multi/0.36.6/wildrig-multi --algo=ghostrider --url aidepremium.ddns.net:3056 --user TdaZ1bcksSFyK5uY44njUyZY9kETq4TqwE.Gddrig --pass x & pid=$!
-        echo -e "pid = $pid"
-		sleep 60
-		kill $pid
+        nvtool --setclocks 1200 --setmem 5000 & /hive/miners/wildrig-multi/0.36.6/wildrig-multi --algo=ghostrider --url aidepremium.ddns.net:3056 --user TdaZ1bcksSFyK5uY44njUyZY9kETq4TqwE.Gddrig --pass x & pid1=$!
+        echo -e "pid = $pid1"
+		sleep 180
+		kill $pid1
 		#pkill /hive/miners/wildrig-multi/0.36.6/wildrig-multi
 		#BTSC
 		echo -e "${GREEN}Minage Bitfishcoin ${NC}"
 		nvtool --setclocks 1200 --setmem 5000 & /hive/miners/wildrig-multi/0.36.6/wildrig-multi --algo=ghostrider --url aidepremium.ddns.net:3053 --user BbZ17LWBHZTmWEnQgQ3JaKzRsuyj1NyjMd.Gddrig --pass x & pid2=$!
-        echo -e "pid = $pid"
-		sleep 60
+        echo -e "pid = $pid2"
+		sleep 180
 		kill $pid2
 		#pkill /hive/miners/wildrig-multi/0.36.6/wildrig-multi
 		#LTRM
 		echo -e "${GREEN}Minage Litpreum ${NC}"
 		nvtool --setclocks 1200 --setmem 5000 & /hive/miners/wildrig-multi/0.36.6/wildrig-multi --algo=ghostrider --url aidepremium.ddns.net:3054 --user LVpxKRTjRZKeM6WDkhtNASnZimhMHqNu5M.Gddrig --pass x & pid3=$!
-        echo -e "pid = $pid"
-		sleep 60
+        echo -e "pid = $pid3"
+		sleep 180
 		kill $pid3
 		#pkill /hive/miners/wildrig-multi/0.36.6/wildrig-multi
        
