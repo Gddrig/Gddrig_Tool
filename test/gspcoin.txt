@@ -1,9 +1,4 @@
-1NHdminYQJcaNsGjFb5ZeYHAwyfdH3JdtM
 
-GKQUodaHi5JDNqme5rikrkNx1eeY3eJ97t
-
-
-BaGamWr6mXLvTTneN65C3erWkGzJ9kmRnU
 
 
 rpcallowip-0.0.0.0/0
@@ -14,27 +9,6 @@ rpcpassword=
 rpcport-15167 rpcbind-
 
 
-1Jw8DejU2byMxqoi82TWdY3X3d8DQTeDx4
 
 
-t1V3MiUzNZTW1pYQPPZKPp5Jcgn2XLtpGND
-
-REtNosYGVwh8EqfaMaF8wzJQNNpNNU8RS9
-
-
-wget -r https://kawpow.digital/satox/index.php
-
-
-Gh3VBCMVJhmjmeELWnKzGTmS7WnqvJKPGw
-
-vtc1qs42dr600aecx59mlgmxcfq8gw06p5csgxf05fq
-
-
-https://we.tl/t-KoF9ZjQ4Xi
-
-1HC7qhqazDCRd2YBGob8jPAQrzPsSTUGpX
-
-
-KzJPSMxuLEkCNBea2AHB4SgmmhP66dHna1CuiDeNFJ1th4ogn152
-
-0x02D03C038973a366d46B1641C7a23C9E5Bd0D0b3
+FHG1yWdr84SYU6epiLmcjnzBoDsWYRu3zy
